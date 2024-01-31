@@ -21,7 +21,19 @@ const Header = () => {
               Home
             </Link>
           </li>
-          {!user && (
+
+          {user ? (
+            <>
+              <li>
+                <Link href="/profile" className="text-ct-dark-600">
+                  Profile
+                </Link>
+              </li>
+              <li className="cursor-pointer" onClick={() => signOut()}>
+                Logout
+              </li>
+            </>
+          ) : (
             <>
               <li>
                 <Link href="/login" className="text-ct-dark-600">
@@ -32,18 +44,6 @@ const Header = () => {
                 <Link href="/register" className="text-ct-dark-600">
                   Register
                 </Link>
-              </li>
-            </>
-          )}
-          {user && (
-            <>
-              <li>
-                <Link href="/profile" className="text-ct-dark-600">
-                  Profile
-                </Link>
-              </li>
-              <li className="cursor-pointer" onClick={() => signOut()}>
-                Logout
               </li>
             </>
           )}
