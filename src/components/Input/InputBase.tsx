@@ -1,3 +1,5 @@
+"use client";
+
 import { Label } from "@components/Label";
 import { cn } from "@lib/utils";
 import { ChangeEvent, HTMLInputTypeAttribute } from "react";

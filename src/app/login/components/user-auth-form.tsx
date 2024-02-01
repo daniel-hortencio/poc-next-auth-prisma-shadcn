@@ -36,7 +36,7 @@ export function UserAuthForm() {
 
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/profile";
+  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
 
   const methods = useForm<IFormInput>({
     resolver: zodResolver(AuthSchema),
