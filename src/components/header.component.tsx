@@ -25,8 +25,8 @@ const Header = () => {
           {user ? (
             <>
               <li>
-                <Link href="/profile" className="text-ct-dark-600">
-                  Profile
+                <Link href="/dashboard" className="text-ct-dark-600">
+                  Dashboard
                 </Link>
               </li>
               <li className="cursor-pointer" onClick={() => signOut()}>
