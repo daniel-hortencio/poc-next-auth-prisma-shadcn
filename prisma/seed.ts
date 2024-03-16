@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 async function main() {
   const password = await hash("password123", 12);
-  const user = await prisma.user.upsert({
+  const admin = await prisma.user.upsert({
     where: { email: "admin@admin.com" },
     update: {},
     create: {
@@ -15,7 +15,17 @@ async function main() {
       role: "ADMIN",
     },
   });
-  console.log({ user });
+  const customer = await prisma.user.upsert({
+    where: { email: "customer@customer.com" },
+    update: {},
+    create: {
+      email: "customer@customer.com",
+      name: "Customer",
+      password,
+      role: "USER",
+    },
+  });
+  console.log({ admin, customer });
 }
 main()
   .then(() => prisma.$disconnect())

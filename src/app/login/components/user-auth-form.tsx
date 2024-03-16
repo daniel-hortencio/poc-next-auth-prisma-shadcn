@@ -43,8 +43,6 @@ export function UserAuthForm() {
   });
 
   async function onSubmit(data: AuthData) {
-    console.log({ data });
-
     try {
       setLoading(true);
 
@@ -56,7 +54,6 @@ export function UserAuthForm() {
 
       setLoading(false);
 
-      console.log(res);
       if (!res?.error) {
         router.push(callbackUrl);
       } else {
@@ -65,7 +62,6 @@ export function UserAuthForm() {
     } catch (error: any) {
       setLoading(false);
       alert("Erro");
-      console.log(error);
     }
   }
 

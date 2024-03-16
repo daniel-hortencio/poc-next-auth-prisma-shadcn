@@ -25,7 +25,7 @@ export default async function CustomersPage() {
       </div>
 
       <Table>
-        <TableCaption>A list of all users.</TableCaption>
+        {/* <TableCaption>A list of all users.</TableCaption> */}
         <TableHeader>
           <TableRow>
             <TableHead>Name</TableHead>
